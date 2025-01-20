@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: k8s-edu-deployment
+  name: k8s-edu-goods-deployment
   namespace: edu-goods
 spec:
   selector:
     matchLabels:
-      app: k8s-edu-app
+      app: k8s-edu-goods-app
   replicas: 1
   template:
     metadata:
       labels:
-        app: k8s-edu-app
+        app: k8s-edu-goods-app
         version: blue
     spec:
       containers:
-        - name: k8s-edu-app
+        - name: k8s-edu-goods-app
           image: jinunkim/k8s-goods:0.0.1      # dockerhub image repository : repo/image명:Tag
           imagePullPolicy: IfNotPresent        # k8s 클러스터에 다운로드 된 이미지 없으면 다운 or Always
           ports:
