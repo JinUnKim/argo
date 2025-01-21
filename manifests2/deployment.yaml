@@ -24,10 +24,10 @@ spec:
               protocol: TCP
           resources:                           # pod 사용 리소스 설정 블록
             requests:                          # 생성시 필요한 최소 리소스
-              cpu: "1"
-              memory: "2Gi"
+              cpu: "500m"
+              memory: "1Gi"
             limits:                            # pod가 사용 가능한 최대 리소스
-              cpu: "1"
+              cpu: "2"
               memory: "2Gi"
           livenessProbe:
             httpGet:
