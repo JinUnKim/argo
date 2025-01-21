@@ -28,14 +28,6 @@ spec:
             limits:                            # pod가 사용 가능한 최대 리소스
               cpu: "1"
               memory: "2Gi"
-          livenessProbe:
-            httpGet:
-              path: /1
-              port: 8080  # 포트를 8080으로 수정
-            initialDelaySeconds: 10  # 초기화 시간을 고려하여 10초로 설정
-            periodSeconds: 10
-            failureThreshold: 3
-            timeoutSeconds: 2    
           env:                                 # pod 내 환경 변수 설정
             - name: SPRING_PROFILES_ACTIVE     # spring profile 설정
               value: prod                      # 상용(prod) 환경
