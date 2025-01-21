@@ -7,14 +7,13 @@ spec:
   selector:
     matchLabels:
       app: k8s-edu-goods-app
-  replicas: 1
+  replicas: 2
   template:
     metadata:
       labels:
         app: k8s-edu-goods-app
         version: blue
     spec:
-      replicas: 2
       containers:
         - name: k8s-edu-goods-app
           image: jinunkim/k8s-goods:0.0.3      # dockerhub image repository : repo/image명:Tag
