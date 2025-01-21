@@ -24,15 +24,15 @@ spec:
               protocol: TCP
           resources:                           # pod 사용 리소스 설정 블록
             requests:                          # 생성시 필요한 최소 리소스
-              cpu: "500m"
+              cpu: "1"
               memory: "1Gi"
             limits:                            # pod가 사용 가능한 최대 리소스
-              cpu: "2"
-              memory: "2Gi"
+              cpu: "1"
+              memory: "1Gi"
           livenessProbe:
             httpGet:
               path: /
-              port: 8080  # nginx가 리스닝하는 포트
+              port: 80  # nginx가 리스닝하는 포트
             initialDelaySeconds: 5  # 컨테이너 시작 후 첫 체크까지 대기 시간
             periodSeconds: 5  # 상태 체크 간격 (5초)
             failureThreshold: 3  # 3번 실패 시 재시작
