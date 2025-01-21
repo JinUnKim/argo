@@ -36,7 +36,7 @@ spec:
         - name: k8s-edu-dockerhub-secret
       #nodeSelector:                            # pod가 실행 될 node 설정
         #kubernetes.io/hostname: worker01
-
+---
 apiVersion: autoscaling/v2
 kind: HorizontalPodAutoscaler
 metadata:
