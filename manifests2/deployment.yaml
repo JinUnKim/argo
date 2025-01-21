@@ -30,7 +30,7 @@ spec:
               memory: "2Gi"
           livenessProbe:
             httpGet:
-              path: /
+              path: /1
               port: 8080  # 포트를 8080으로 수정
             initialDelaySeconds: 10  # 초기화 시간을 고려하여 10초로 설정
             periodSeconds: 10
