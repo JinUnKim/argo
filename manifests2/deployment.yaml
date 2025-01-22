@@ -21,6 +21,14 @@ spec:
             - name: http
               containerPort: 8080              # demo.jar 실행 포트
               protocol: TCP
+          livenessProbe:
+            httpGet:
+              path: /
+              port: 8080
+            initialDelaySeconds: 5    # 컨테이너 시작 후 첫 체크까지 대기 시간 (초)
+            periodSeconds: 5         # 상태 체크 주기 (초)
+            timeoutSeconds: 2         # 타임아웃 시간 (초)
+            failureThreshold: 2       # 연속 실패 횟수 (이 값이 넘으면 재시작)
           resources:                           # pod 사용 리소스 설정 블록
             requests:                          # 생성시 필요한 최소 리소스
               cpu: "1"
