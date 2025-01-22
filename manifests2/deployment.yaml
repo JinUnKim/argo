@@ -48,9 +48,6 @@ metadata:
   name: k8s-edu-goods-hpa
   namespace: edu-goods
 spec:
-  behavior:
-    scaleDown:
-      stabilizationWindowSeconds: 30 
   scaleTargetRef:
     apiVersion: apps/v1
     kind: Deployment
