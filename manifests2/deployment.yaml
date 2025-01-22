@@ -31,14 +31,6 @@ spec:
           env:                                 # pod 내 환경 변수 설정
             - name: SPRING_PROFILES_ACTIVE     # spring profile 설정
               value: prod                      # 상용(prod) 환경
-          livenessProbe:
-            httpGet:
-              path: /
-              port: 8080
-            initialDelaySeconds: 5    # 컨테이너 시작 후 첫 체크까지 대기 시간 (초)
-            periodSeconds: 5         # 상태 체크 주기 (초)
-            timeoutSeconds: 2         # 타임아웃 시간 (초)
-            failureThreshold: 2       # 연속 실패 횟수 (이 값이 넘으면 재시작)
       imagePullSecrets:                        # dockerhub 이미지 pull 위한 secret
         - name: k8s-edu-dockerhub-secret-goods
       #nodeSelector:                            # pod가 실행 될 node 설정
