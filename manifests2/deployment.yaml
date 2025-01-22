@@ -33,12 +33,10 @@ spec:
               value: prod                      # 상용(prod) 환경
           livenessProbe:
             httpGet:
-              path: /         # /healthz 경로로 상태를 체크
-              port: 8080             # 8080 포트에서 상태 확인
-            initialDelaySeconds: 5    # 컨테이너 시작 후 첫 체크까지 5초 대기
-            periodSeconds: 10         # 상태 체크를 10초마다 수행
-            timeoutSeconds: 2         # 각 요청에 대해 2초 내에 응답을 받지 못하면 실패로 간주
-            failureThreshold: 3       # 3번 연속 실패 시 파드를 재시작
+              path: /
+              port: 8080
+            initialDelaySeconds: 10
+            periodSeconds: 5
       imagePullSecrets:                        # dockerhub 이미지 pull 위한 secret
         - name: k8s-edu-dockerhub-secret-goods
       #nodeSelector:                            # pod가 실행 될 node 설정
