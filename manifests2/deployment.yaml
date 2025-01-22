@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: k8s-edu-goods-app
-          image: jinunkim/k8s-goods:0.0.4      # dockerhub image repository : repo/image명:Tag
+          image: jinunkim/k8s-goods:0.0.5      # dockerhub image repository : repo/image명:Tag
           imagePullPolicy: Always        # Sync
           ports:
             - name: http
